@@ -1,5 +1,4 @@
 services:
-
   frontend-dev:
     build:
       context: .
@@ -18,3 +17,11 @@ services:
       dockerfile: Dockerfile.dev
     pull_policy: build
     command: ["npm", "run", "test"]
+
+  angular-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nathalia
+    ports:
+      - "8080:8080"
